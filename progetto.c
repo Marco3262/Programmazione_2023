@@ -11,7 +11,7 @@ void beal_conjecture();
 void collatz_conjecture();
 int validator_next_first_num(int val);
 void cramer_conjecture();
-jnj
+
 int main()
 {
     int a;
