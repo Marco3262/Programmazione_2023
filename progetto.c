@@ -4,7 +4,7 @@
 
 int validator_cycle();
 int validator_num(int n,char x);
-int validator_first_num(int a);
+int validator_first_num(int val);
 void common_first_num(int a, int b, int c);
 void equation_validator(int a, int b, int c, int x, int y, int z);
 void beal_conjecture();
@@ -14,7 +14,7 @@ void cramer_conjecture();
 
 int main()
 {
-    int a;
+    int val;
     
     printf("Progetto di programmazione.\n");
     printf("Scegli quale congettura verificare tra le seguenti:\n");
@@ -23,8 +23,8 @@ int main()
     printf("2. Congettura di Cramer\n");
     printf("Inserisci valore corrispondente: ");
     
-    a = validator_cycle();
-    switch(a){
+    val = validator_cycle();
+    switch(val){
         case 0:
             beal_conjecture();
             break;
@@ -42,39 +42,39 @@ int main()
 /* Funzione per la validazione del menu*/
 int validator_cycle(){
 
-    int a,
+    int val,
         control;
     
     /* Acquisisco valore */ 
-    control = scanf("%d",&a);
+    control = scanf("%d",&val);
     
     /* Avvio un ciclo quando il valore non è compreso tra 0 e 2 */
     
-    while(a < 0 || a > 2 || control != 1){
+    while(val < 0 || val > 2 || control != 1){
             
-            printf("Non è corretto. Riprova: ");
+            printf("Il valore non è corretto. Riprova: ");
             
             /* Pulisco il buffer */
             scanf("%*[^\n]");
             /* Riacquisisco il valore */
-            control = scanf("%d",&a);
+            control = scanf("%d",&val);
         
     }
     
-    return a;
+    return val;
 
 }
 
 /* Funzione per la validazione di un intero maggiore di n*/
 int validator_num(int n,char x){
 
-    int a,
+    int val,
         control;
     
     /* Acquisisco valore */ 
-    control = scanf("%d",&a);
+    control = scanf("%d",&val);
     /* Avvio un ciclo che impone che il valore sia maggiore di n */
-    while(a < n || control != 1){
+    while(val < n || control != 1){
             
             /* Faccio un controllo per la stampa */
             if(x == 'y'){
@@ -88,16 +88,16 @@ int validator_num(int n,char x){
             /* Pulisco il buffer */
             scanf("%*[^\n]");
             /* Riacquisisco il valore */
-            control = scanf("%d",&a);
+            control = scanf("%d",&val);
         
     }
     
-    return a;
+    return val;
 
 }
 
 /* Funzione che stabilisce se il numero inserito è un numero primo */
-int validator_first_num(int a){
+int validator_first_num(int val){
     
     int i;
     int control = 1;
@@ -105,9 +105,9 @@ int validator_first_num(int a){
     /* Verifico che il numero inserito sia un numero primo */
     /* dividendolo ogni volta per due in su e verificando */
     /* se si ottiene un resto oppure no */
-    for(i = 2; control == 1 && i < a; i++){
+    for(i = 2; control == 1 && i < val; i++){
         
-        if(a%i == 0){
+        if(val%i == 0){
             /* Se non c'è resto vuol dire che il numero */
             /* non è primo poichè è divisibile perciò */
             /* setto control a zero e richiedo un nuovo inserimento */
@@ -216,9 +216,8 @@ void collatz_conjecture(){
     /* Acquisisco il valore */
     val = validator_num(1,'y');
     
-    /* Inizio a stampare la sequenza */
+    /* Inizio a stampare la sequenza finchè non arrivo a uno */
     printf("La sequenza è:\n");
-    /* Stampo la sequenza finchè non arrivo a uno */
     
     printf("%d\n",val);
     while(val != 1){
@@ -275,15 +274,14 @@ int validator_next_first_num(int val){
 /* Funzione per la verifica della congettura di Cramer */
 void cramer_conjecture(){
 
-    int diff,
-        val1,
+    int val1,
         val2,
+        diff,
         control;
     double log_nat;
     
     printf("Inserisci un numero primo: ");
     do{
-        
         val1 = validator_num(12,'y');
         control = validator_first_num(val1);
         
