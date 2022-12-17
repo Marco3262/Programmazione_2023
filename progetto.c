@@ -174,8 +174,7 @@ void beal_conjecture(){
         c,
         x,
         y,
-        z,
-        result;
+        z;
     
     /* Acquisisco i dati */
     printf("Inserisci il valore di a: ");
@@ -232,9 +231,7 @@ void collatz_conjecture(){
 
 int validator_next_first_num(int val){
     
-    int i,
-        control = 0,
-        control1 = 1,
+    int control = 0,
         next,
         val_ins;
     
