@@ -300,6 +300,6 @@ void cramer_conjecture(){
     
     log_nat = log(val1);
     log_nat = pow(log_nat,2);
-    printf("Il quadrato del logartimo naturale del numero primo più piccolo è %.2lf\n",log_nat);
+    printf("Il quadrato del logartimo naturale del numero primo più piccolo è %.2f\n",log_nat);
 
 }
