@@ -78,10 +78,10 @@ int validator_num(int n,char x){
             
             /* Faccio un controllo per la stampa */
             if(x == 'y'){
-                printf("Deve essere un NUMERO maggiore di %d.\n"
+                printf("Deve essere un NUMERO MAGGIORE di %d.\n"
                         "Inserisci di nuovo: ",n-1);
             }else{
-                printf("Deve essere un NUMERO maggiore uguale di %d.\n"
+                printf("Deve essere un NUMERO MAGGIORE UGUALE di %d.\n"
                     "Inserisci di nuovo: ",n);
             }
             
@@ -137,8 +137,17 @@ void common_first_num(int a, int b, int c){
         
         /* Se il fattore è primo verifico che lo sia per tutti*/
         if(control == 1 && a%i == 0 && b%i == 0 && c%i == 0){
-            printf("Un fattore primo in comune è %d\n",i);
-            count++;
+            
+
+            
+            /* DA RIVEDERE CICLI IF ANNIDATI */
+            
+            
+            /* Controllo perchè un numero non può essere fattore primo di se stesso */
+            if(i != a && i != b && i != c){
+                printf("Un fattore primo in comune è %d\n",i);
+                count++;
+            }
         }
     }
     
@@ -211,7 +220,8 @@ void collatz_conjecture(){
     printf("La sequenza è:\n");
     /* Stampo la sequenza finchè non arrivo a uno */
     
-    do{
+    printf("%d\n",val);
+    while(val != 1){
         /* Stabilisco il caso in cui il numero è pari */
         if(val%2 == 0){
             /* Lo divido per due e lo stampo */
@@ -224,7 +234,7 @@ void collatz_conjecture(){
             printf("%d\n",val);
             
         }
-    }while(val != 1);
+    }
 }
 
 /* FUNZIONI PER LA CONGETTURA DI CRAMER */
@@ -274,7 +284,7 @@ void cramer_conjecture(){
     printf("Inserisci un numero primo: ");
     do{
         
-        val1 = validator_num(11,'n');
+        val1 = validator_num(12,'y');
         control = validator_first_num(val1);
         
         if(control == 0){
@@ -290,6 +300,6 @@ void cramer_conjecture(){
     
     log_nat = log(val1);
     log_nat = pow(log_nat,2);
-    printf("Il quadrato del logartimo naturale del numero primo più piccolo è %.3lf\n",log_nat);
+    printf("Il quadrato del logartimo naturale del numero primo più piccolo è %.2lf\n",log_nat);
 
 }
