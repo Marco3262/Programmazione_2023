@@ -194,20 +194,8 @@ void common_first_num(int a,        /* Input: variabile che identifica il valore
            b%i == 0 && 
            c%i == 0)
         {
-            
-
-            
-            /* DA RIVEDERE CICLI IF ANNIDATI */
-            
-            
-            /* Controllo perchè un numero non può essere fattore primo di se stesso */
-            if(i != a &&
-               i != b && 
-               i != c)
-            {
-                printf("Un fattore primo in comune è %d\n",i);
-                count++;
-            }
+            printf("Un fattore primo in comune è %d\n",i);
+            count++;    
         }
     }
     
