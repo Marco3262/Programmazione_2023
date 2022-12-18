@@ -1,6 +1,7 @@
 /* Inclusione delle librerie */
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 /* Dichiarazione delle funzioni */
 
