@@ -289,12 +289,12 @@ void collatz_conjecture()
     val = validator_num(1,
                         'y');
     
-    /* Inizio a stampare la sequenza finchè non arrivo a uno */
+    /* Inizio a stampare la sequenza finchè non arrivo a uno o zero */
     printf("La sequenza è:\n");
     
     printf("%d\n",
            val);
-    while(val != 1)
+    while(val != 1 || val != 0)
     {
         /* Stabilisco il caso in cui il numero è pari */
         if(val%2 == 0)
