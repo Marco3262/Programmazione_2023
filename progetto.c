@@ -194,7 +194,7 @@ void common_first_num(int a,        /* Input: variabile che identifica il valore
            b%i == 0 && 
            c%i == 0)
         {
-            printf("Un fattore primo in comune è %d\n",i);
+            printf("E' presente un fattore primo in comune\n");
             count++;    
         }
     }
