@@ -174,7 +174,7 @@ void common_first_num(int a,        /* Input: variabile che identifica il valore
 {
     int i,              /* Lavoro: variabile contatore di ciclo */
         control = 0,    /* Lavoro: variabile di controllo che identifica se un numero è primo */
-        count = 0;      /* Lavoro: variabile contatore che indica se c'è un fattore primo in comune */
+        count = 0;      /* Lavoro: variabile contatore che indica se c'è almeno un fattore primo in comune */
     
     /* Confronto i fattori primi di a con quelli di b e c */
     for(i = 2;
@@ -194,16 +194,20 @@ void common_first_num(int a,        /* Input: variabile che identifica il valore
            b%i == 0 && 
            c%i == 0)
         {
-            printf("E' presente un fattore primo in comune\n");
+            // Si modifica il contatore per stampare l'esito corretto
             count++;    
         }
     }
     
-    /* Se non ci sono fattori primi, lo stampo a video */
-    if(count == 0)
+    /* Si stampa l'esito a video */
+    if(count != 0)
+    {
+        printf("E' presente un fattore primo in comune\n");
+    }
+    else
     {
         printf("Non ci sono fattori primi in comune.\n");
-    }  
+    }
 }
 
 /* Funzione per validare la correttezza dell'equazione */
