@@ -1,2 +1,2 @@
-progetto:		progetto.c
-	gcc -ansi -Wall -Wpedantic -Werror progetto.c -o progetto -lm
+conjecture_project:		conjecture_project.c
+	gcc -ansi -Wall -Wpedantic -Werror conjecture_project.c -o conjecture_project -lm
