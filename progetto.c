@@ -195,16 +195,13 @@ void common_first_num(int a,        /* Input: variabile che identifica il valore
            c%i == 0)
         {
             // Si modifica il contatore per stampare l'esito corretto
+            printf("Un valore primo in comune è %d.\n",i);
             count++;    
         }
     }
     
-    /* Si stampa l'esito a video */
-    if(count != 0)
-    {
-        printf("E' presente un fattore primo in comune\n");
-    }
-    else
+    /* Si stampa l'esito se non sono presenti valori in comune */
+    if(count == 0)
     {
         printf("Non ci sono fattori primi in comune.\n");
     }
